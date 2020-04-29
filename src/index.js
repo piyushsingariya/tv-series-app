@@ -4,14 +4,13 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const getCurrentDate = function() {
+  const date = new Date();
+  return date.toDateString();
+}
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
+// const greeting = React.createElement('h1',{}, 'Hello World!')
+const greeting = <h1>Hello World! Today: {getCurrentDate()} </h1>;
+
+ReactDOM.render(greeting, document.getElementById('root'));
 serviceWorker.unregister();
